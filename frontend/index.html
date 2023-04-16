@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!-- DOCUMENTATION: https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder#maps_places_placeid_finder-javascript -->
+
+<html>
+
+<head>
+  <title>Grocery Broker</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script type="module" src="./map.js"></script>
+  <script type="module" src="./script.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfuoOS2t-VDV08hxTSXGJJqfZ50lt2_Mc&callback=initMap&libraries=places&v=weekly"
+    defer>
+    </script>
+</head>
+
+<body>
+  <section class="main">
+    <div class="header">
+      <h1>Grocery Broker</h1>
+    </div>
+  
+    <div style="display: none">
+      <input id="pac-input" class="controls" type="text" placeholder="Enter a location" />
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <span id="place-id"></span>
+      <span id="place-address"></span>
+    </div>
+  
+    <div class="entry">
+      <div class="form_group">
+        <input list="product_list" class="item_input" id="product" type="text" name="product" placeholder="Product"></input>
+        <datalist id="product_list"></datalist>
+        <input class="item_input" id="price" type="number" name="price" placeholder="Price" min="0.00" max="10000.00" step="0.01"></input>
+      </div>
+  
+      <button id="submit" class="item_input">Compare Prices</button>
+    </div>
+    <p id="results"></p>
+  </section>
+</body>
+
+</html>
+
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfuoOS2t-VDV08hxTSXGJJqfZ50lt2_Mc&callback=myMap"></script> -->
